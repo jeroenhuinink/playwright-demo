@@ -28,3 +28,10 @@ test('kan niet registreren zonder persoonlijke gegevens', async ({ registratiePa
     await expect(registratiePage.getByText('Voornaam is verplicht')).toBeVisible();
     expect(registratiePage.url).toBe(expected);
 });
+
+test('toon waarschuwing bij ongeldige brin code', async ({ registratiePage }) => {
+    await registratiePage.getByPlaceholder('99XX00').click();
+    await registratiePage.keyboard.type('99PT00');
+
+    await expect(registratiePage.getByText('Heb je geen BRIN/klantnummer')).toBeVisible();
+});
