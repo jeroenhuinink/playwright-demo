@@ -23,7 +23,8 @@ test('velden worden automatisch ingevuld obv brin code', async ({ registratiePag
 
 test('kan niet registreren zonder persoonlijke gegevens', async ({ registratiePage }) => {
     const expected = registratiePage.url;
-    await registratiePage.getByPlaceholder('99XX00').fill('10PT00');
+    await registratiePage.getByPlaceholder('99XX00').click();
+    await registratiePage.keyboard.type('10PT00');
     await registratiePage.getByRole('button', { name: 'Verzenden' }).click();
     await expect(registratiePage.getByText('Voornaam is verplicht')).toBeVisible();
     expect(registratiePage.url).toBe(expected);
