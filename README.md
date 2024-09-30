@@ -4,6 +4,22 @@ Dit project bevat wat voorbeeld scripts in playwright.
 
 Documentatie is te vinden op <https://playwright.dev>
 
+## Installatie
+
+Om Playwright te gebruiken heb je nodejs ([installatie instructies](https://nodejs.org/en/download/prebuilt-installer)) en npm nodig (wordt meegeïnstalleerd met nodejs)
+
+Run het volgende commando in de root van de project directory.
+
+```shell
+npm install
+```
+
+Het kan zijn dat je daarna nog de browsers voor playwright moet installeren via:
+
+```shell
+npx playwright install
+```
+
 ## Basis commandos
 
 Run de tests:
